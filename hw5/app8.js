@@ -5,7 +5,7 @@ let secondPart1 = secondPart % 10;
 let secondPart2 = ((secondPart - secondPart1) / 10) % 10;
 let secondPart3 = (secondPart - secondPart % 100) / 100;  
 let secondPartInv = secondPart1 * 100 + secondPart2 * 10 + secondPart3;
-if (firstPart == secondPartInv) {
+if (firstPart === secondPartInv) {
     alert ('Это зеркальное число');
 }
 else {

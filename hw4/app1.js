@@ -9,7 +9,7 @@ else {let today = new Date();
     phrase += 'Тебе '+ age + ' лет \n';
 }
 let town = prompt('В каком городе ты живешь?');
-if (town == undefined) {
+if ((town == undefined)|| (town === '')||(town == null)) {
     alert ('Жаль, что Вы не захотели указать свой город');
 }
 else {
