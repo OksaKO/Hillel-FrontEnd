@@ -1,6 +1,6 @@
 let yearOfBorn = prompt('Какой год твоего рождения?');
 let phrase = '';
-if (yearOfBorn == undefined) {
+if ((yearOfBorn == undefined)|| (yearOfBorn === '')||(yearOfBorn == null)) {
     alert ('Жаль, что Вы не захотели ввести свой год рождения');
 } 
 else {let today = new Date();
@@ -29,7 +29,7 @@ else {
     }
 }
 let sport = prompt ('Какой твой любимый вид спорта?');
-if (sport == undefined) {
+if ((sport == undefined)|| (sport === '')||(sport == null)) {
     alert ('Жаль, что Вы не захотели сказать свой любимый спорт');
 }
 else {
