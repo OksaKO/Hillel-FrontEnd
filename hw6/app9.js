@@ -6,3 +6,6 @@ for (let i = 1; i < cent; i++) {
         console.log (digit / i);
     }
 }
+if (cent ** 2 === digit) {
+    console.log(cent);
+}

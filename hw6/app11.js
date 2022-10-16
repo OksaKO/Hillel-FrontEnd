@@ -12,4 +12,7 @@ for (let i = 1; i < cent; i++) {
         }
     }
 }
+if ((cent ** 2 === digit) && (cent % 2 === 0) ) {
+    sum += cent;
+}
 console.log(sum);
