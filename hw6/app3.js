@@ -1,3 +1,5 @@
-for (let i=1; i<=10; i++){
+let left = parseInt(prompt('Input left digit' ));
+let right = parseInt(prompt('Input right digit' ));
+for (let i = left; i<=right; i++){
     console.log(i + ' * 7 = ' + i*7);
 }
