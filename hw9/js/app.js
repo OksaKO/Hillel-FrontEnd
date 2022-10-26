@@ -2,12 +2,6 @@ const EXCHANGE = 41;
 const DISCOUNT_STARTS_FROM = 100000;
 const DISCOUNT_STR = 10;
 const DISCOUNT = DISCOUNT_STR / 100;
-let productNumber;
-let amount;
-let selectedProduct;
-let finalPrice;
-let superFinalPrice;
-let discount;
 
 // Show products
 function showProducts() {
@@ -54,6 +48,12 @@ function calcFinalPrice(){
 }
 
 function shop(){
+  let productNumber;
+  let amount;
+  let selectedProduct;
+  let finalPrice;
+  let superFinalPrice;
+  let discount;
   showProducts();
   getProductNumber();
   getAmountProducts();
