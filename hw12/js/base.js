@@ -15,11 +15,13 @@ function createOwner(){
     return new Person (ownerName, ownerAge);
 }
 // Создаем базу владельцев авто
-function baseOwners(){
-    owner1 = createOwner();
-    owner2 = createOwner();
-    owner3 = createOwner();
-}
+// function createBaseOwners(){
+//     let owners = [];
+//     for (let i = 0; i < 3; i++) {
+//         owners [i] = createOwner();
+//     }
+//     return owners;
+// }
 // Создаем сущность автомобиля
 function createAuto(){
     let autoModel, autoYear, autoVolume;
@@ -35,8 +37,29 @@ function createAuto(){
     return new Auto (autoModel, autoYear, autoVolume);
 }
 // Создаем базу авто
-function baseAutos(){
-    auto1 = createAuto();
-    auto2 = createAuto();
-    auto3 = createAuto();    
+// function createBaseAutos(owners){
+//     let autos = [];
+//     for (let i = 0; i < 3; i++) {
+//         autos[i] = createAuto(owners[i]);
+//         console.log(autos[i]);
+//     }
+// return autos;
+// }
+function createBase(){
+    let owners = [];
+    for (let i = 0; i < 3; i++) {
+        owners [i] = createOwner();
+    }
+    let autos = [];
+    for (let i = 0; i < 3; i++) {
+        autos[i] = createAuto();
+        autos[i].setOwners(owners[i]);
+    }
+    return autos;
+}
+function showBase(auto){
+    for (let i = 0; i < 3; i++) {
+        auto[i].showInfo();
+        
+    }
 }
