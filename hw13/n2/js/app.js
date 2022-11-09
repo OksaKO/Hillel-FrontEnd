@@ -8,7 +8,12 @@ function twoButton(){
         }
     }
     function goToURL(){
-        window.location.href= url;
+        if (url === '') {
+            window.location.reload();
+        }
+        else {
+        window.location.href = url;
+        }
     }
     let btn1 = document.querySelector('.btn1');
     let btn2 = document.querySelector('.btn2');

@@ -1,11 +1,11 @@
 function handlingField(){
     let field = document.querySelector('.field');
     let divText = document.querySelector('.textP');
-    field.addEventListener("mouseover", divTextShow);
+    field.addEventListener("focus", divTextShow);
     function divTextShow(){
-        divText.innerHTML='Вы навели на текстовое поле';
+        divText.innerHTML='Вы выбрали текстовое поле';
     }
-    field.addEventListener("mouseout", divTextClean);
+    field.addEventListener("blur", divTextClean);
     function divTextClean(){
         divText.innerHTML='';
     }
