@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+}
+
+.container > div {
+  flex-grow: 1;
+  border: 1px solid black;
+  min-height: 20px;
+  max-width: 34%;
+}
+button {
+  margin: 15px;
+}
