@@ -50,13 +50,13 @@ function showDetails(event) {
   const button = document.createElement('button');
   button.textContent ='To bye';
   container.appendChild(button);
-  const message = document.createElement('div');
   button.addEventListener('click', showMessage);
-  message.textContent ='';
-  container.appendChild(message);
-  
+    
   function showMessage(){
+    container.innerHTML = '';
+    const message = document.createElement('div');
     message.textContent =`Вы купили: ${data[categoryIndex].products[productIndex].name}`;    
+    container.appendChild(message);
   }
   
 }
