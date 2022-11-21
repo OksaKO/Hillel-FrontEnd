@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+  
+  <div class="container">
+    <div class="categories"></div>
+    <div class="products"></div>
+    <div class="details"></div>
+  </div>
+  <br>
+  <div id = 'formOrder'>
+    <form name="order">
+    <p>* ФИО покупателя: </p>
+    <input type="text" name = "userName">
+    <p>* Город</p>
+    <select  name="city">
+      <option value = '0'> Выберите город </option>
+      <option value = '1'>Киев</option>
+      <option value = '2'>Львов</option>
+      <option value = '3'>Полтава</option>
+      <option value = '4'>Одесса</option>
+      <option value = '5'>Чернигов</option>
+    </select>
+  <p>* Склад Новой почты для отправки</p>
+  <select  name="stock">
+    <option value = '0'>Выберите склад</option>
+    <option value = '1'>1</option>
+    <option value = '2'>2</option>
+    <option value = '3'>3</option>
+    <option value = '4'>4</option>
+    <option value = '5'>5</option>
+    <option value = '6'>6</option>
+  </select>
+  <p>* Выберите способ оплаты </p>
+  <p> <input type="radio" name="payment" value = "cod"> Наложенный платеж</p> 
+  <p><input type="radio" name="payment" value = "card"> Оплата картой </p> 
+  <p>* Укажите количество приобретаемой продукци</p>
+  <input type="number" name = "countProd">
+  <p>Комментарий к заказу</p>
+  <textarea name = "comment" cols = "40" rows = "5"></textarea>
+  </form>
+  <div id = errorMessage></div> 
+  <button id = "btnSend">Send</button>
+  </div> 
+  <div id = "resultOrder">
+  </div>
+  
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
