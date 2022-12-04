@@ -65,11 +65,13 @@ function showDetails(event) {
   function showForm() {
     const divOrder = document.querySelector('#formOrder');
     divOrder.style.display = 'block';
+    k++;
     const btnSend = document.querySelector('#btnSend');
     btnSend.addEventListener('click', formHendler);
 
   }
 function formHendler(){
+
   const uName = document.forms.order.userName.value;
   const uCity = document.forms.order.city.value;
   const uStock = document.forms.order.stock.value;
@@ -82,6 +84,7 @@ function formHendler(){
   }
   else {
     orders.push({name : uName, city : uCity, stock: uStock, productName: productName, productPrice: productPrice, pay: pay, count: count, comment: comment}) 
+    localStorage.setItem('Order', orders);
     document.forms.order.reset();
     const divOrder = document.querySelector('#formOrder');
     divOrder.style.display = 'none'; 
@@ -93,5 +96,11 @@ function formHendler(){
   }
 }
 }
+function btnOrdersHendler(){
+  // скрыть категории
+  // в цикле создать дивы для отображения заказов
+}
 
 showCategories();
+document.querySelector('.btnOrders').addEventListener('click', btnOrdersHendler());
+
