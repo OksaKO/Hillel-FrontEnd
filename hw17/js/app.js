@@ -23,23 +23,23 @@
 const validators = {
     uName: {
         regExp: /^[A-Z][a-z]{1,}$/,
-        errorMessage: 'Name is incorrect',
+        errorMessage: 'Имя пользователя указано неверно',
     },
     age: {
         regExp: /^\d{2}$/,
-        errorMessage: 'Age is incorrect',
+        errorMessage: 'Возраст указан неверно',
     },
     email:{
         regExp: /^[A-Z]|[a-z]|[0-9]|_|-{1,}@[a-z]|[0-9]{1,}.[a-z]|[0-9]{1,}$/,
-        errorMessage: 'Email is incorrect',
+        errorMessage: 'Email указан неверно',
     },
     phone:{
         regExp: /^\d{10}$/,
-        errorMessage: 'Phone is incorrect',
+        errorMessage: 'Телефон указан неверно',
     },
     card: {
         regExp: /^\d{16}$/,
-        errorMessage: 'Card is incorrect',
+        errorMessage: 'Карта указана неверно',
     },
 }
 
@@ -54,7 +54,7 @@ function showUsers (){
     const btnAdd = document.querySelector("#add");
     btnAdd.addEventListener('click', btnAddHandler);
     
-    const btnSave = document.querySelector("[name = 'save']");
+    const btnSave = document.querySelector("#save");
     btnSave.addEventListener('click', formHandler);
     
     // Создание списка пользователей
@@ -138,12 +138,14 @@ function showUsers (){
             phone: {value: phone},
             card: {value: card},
         } = document.querySelector('form[name = "userEdit"]');
+        const errElem = document.querySelector('#errorDiv');
+        errElem.textContent ='' ;
         if (validate({
             uName, age, email, phone, card,
         })){
-            console.log('start');
             const usersList = JSON.parse(localStorage.getItem('users'));
             const userData = {name: uName, pass: pass, age: age, email: email, phone: phone, card: card}
+            
             if (flag === -1) {
                     usersList.push(userData)
                 }
@@ -152,11 +154,13 @@ function showUsers (){
                 }
             localStorage.setItem('users', JSON.stringify(usersList));
             createList();
-            document.querySelector('form[name = "userEdit"]').reset();
+            let form = document.querySelector('form[name = "userEdit"]');
+            form.reset();
+            form.style.display = 'none';
+            errElem.textContent ='' ;
+
         } else {
-            console.log('Исправьте и сохраните заново')
-            const errElem = document.querySelector('#errorDiv');
-            errElem.textContent += ('Исправьте и сохраните заново'); 
+             errElem.textContent += 'Исправьте и сохраните заново'; 
         }
            
     
@@ -171,7 +175,7 @@ function showUsers (){
                                             
                     } else {
                         const errElem = document.querySelector('#errorDiv');
-                        errElem.textContent += validators[key].errorMessage;
+                        errElem.textContent += `${validators[key].errorMessage}!  ` ;
 
                     }
                 }

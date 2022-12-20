@@ -28,5 +28,5 @@ button {
     float: right;
 }
 form[name = "userEdit"] {
-    display: block;
+    display: none;
 }
