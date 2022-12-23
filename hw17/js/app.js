@@ -114,18 +114,20 @@ function showUsers (){
 
     // обработчик кнопки удаления пользователя
     function btnRemoveHandler(event){
-        const userN = event.target.getAttribute('user-number');
-        const elem = document.querySelector('#userView');
-        elem.style.display = 'none';
-        const elem2 = document.querySelector('form[name = "userEdit"]');
-        elem2.style.display = 'none';
-        const usersList = JSON.parse(localStorage.getItem('users'));
-        usersList.splice(userN,1);
-        localStorage.setItem('users', JSON.stringify(usersList));
-        createList();
-        if (usersList.length === 0) {
-            localStorage.removeItem('users');
-        }        
+        if (window.confirm('Вы действительно хотите удалить пользователя?')) {
+            const userN = event.target.getAttribute('user-number');
+            const elem = document.querySelector('#userView');
+            elem.style.display = 'none';
+            const elem2 = document.querySelector('form[name = "userEdit"]');
+            elem2.style.display = 'none';
+            const usersList = JSON.parse(localStorage.getItem('users'));
+            usersList.splice(userN,1);
+            localStorage.setItem('users', JSON.stringify(usersList));
+            createList();
+            if (usersList.length === 0) {
+                localStorage.removeItem('users');
+            } 
+        }                
     }
 
     // обработчик данных в форме
