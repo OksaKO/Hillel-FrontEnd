@@ -21,20 +21,25 @@ function changeTime(){
     if ( s===60 ){
        m++; 
        s=0;
+       imgM1.src = "images/"+  Math.floor(m/10) + ".png";
+        imgM2.src = "images/"+ m%10 + ".png";
     };
     if ( m===60) {
         h++;
         m=0;
+        imgH1.src = "images/"+ Math.floor(h/10) + ".png";
+        imgH2.src = "images/"+ h%10 + ".png";
     };
     if (h===24){
         h=0;
+        imgH1.src = "images/"+ Math.floor(h/10) + ".png";
+        imgH2.src = "images/"+ h%10 + ".png";
+    
     }
     imgS1.src = "images/"+  Math.floor(s/10) + ".png";
     imgS2.src = "images/"+ s%10 + ".png";
-    imgM1.src = "images/"+  Math.floor(m/10) + ".png";
-    imgM2.src = "images/"+ m%10 + ".png";
-    imgH1.src = "images/"+ Math.floor(h/10) + ".png";
-    imgH2.src = "images/"+ h%10 + ".png";
+    
+    
 }
 setInterval(changeTime, 1000);
 
