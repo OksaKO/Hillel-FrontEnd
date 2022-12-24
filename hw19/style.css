@@ -1,0 +1,14 @@
+div{
+    display: flex;
+    border: 0cm;
+    margin-left: 15%;
+    margin-top: 20px;    
+}
+#left, #right {
+    border: 0ch;
+    width: 50px;
+    font-size: large;
+}
+img {
+    width: 70%;
+}
