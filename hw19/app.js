@@ -1,6 +1,7 @@
 let photo = document.querySelector("img");
 let nPhoto = 1;
-setInterval(changePhoto, 3000);
+let timer = 3000;
+let interval = setInterval(changePhoto, timer);
 document.querySelector("#left").addEventListener('click', function(){
     if (nPhoto ===1){
         nPhoto = 5;
@@ -8,6 +9,8 @@ document.querySelector("#left").addEventListener('click', function(){
         nPhoto--;
     }
     photo.src="images/"+ nPhoto+ ".jpg";
+    clearInterval(interval);
+    interval = setInterval(changePhoto, timer);     
 })
 document.querySelector("#right").addEventListener('click', function(){
     if (nPhoto ===5){
@@ -16,6 +19,8 @@ document.querySelector("#right").addEventListener('click', function(){
         nPhoto++;
     }
     photo.src="images/"+ nPhoto+ ".jpg";
+    clearInterval(interval); 
+    interval = setInterval(changePhoto, timer);       
 })
 function changePhoto(){
     
@@ -24,7 +29,6 @@ function changePhoto(){
     } else {
         nPhoto++;
     };
-    photo.src="images/"+ nPhoto+ ".jpg";
-    
+    photo.src="images/"+ nPhoto+ ".jpg";    
 }
 
