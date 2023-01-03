@@ -1,6 +1,19 @@
 div {
+    padding-left: 10px;
+}
+#People, #Planets, #Vehicles {
     border: 2px solid lightseagreen;
+    margin: 10px;
+    padding: 10px;
+    
 }
 #menu, #container {
     display: flex;
+}
+#next {
+    display: none;
+}
+#info {
+    font-size: medium;
+    padding-left: 30px;
 }
