@@ -29,14 +29,14 @@ function queryInfo(link){
         .then(result => {
                         data = result.data.results;
                         nextPage = result.data.next; 
-                        console.log(nextPage);
+                        
                         if (nextPage === null) {
                             let elem = document.querySelector("#next");
                             elem.style.display = "none";   
                         }
                         createList (data);
                         })
-        .catch(error => {console.log('error');
+        .catch(error => {
                         let elem = document.querySelector("#next");
                            elem.style.display = "none"; 
                     })
@@ -68,7 +68,6 @@ elem.addEventListener('click', () => {
 // отображение информации
 function showInfo(event){
     const num = event.target.getAttribute('unit-num');
-    console.log(data[num]);
     let infoElem = document.querySelector('#info');
     infoElem.innerHTML = "";
         if (category === 'people') {
