@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "order">
+        <form name = "Menu">
+           <h3> Выберите размер гамбургера:</h3>
+            <p>Большой <input type="radio" name = "size" value = "big" > </p> 
+            <p>Маленький <input type="radio" name = "size" value = "small"></p>
+            <h3>Выберите начинку:</h3>
+            <p>Сыр <input type="radio" name = "stuffing" value = "cheese" > </p> 
+            <p>Салат <input type="radio" name = "stuffing" value = "salad"></p>
+            <p>Картофель <input type="radio" name = "stuffing" value = "potato" > </p> 
+            <h3>Выберите добавки:</h3>
+            <p>Майонез <input type="checkbox" id = "topping1" value ="Mayonnaise"> </p>
+            <p>Приправа <input type="checkbox" id = "topping2" value ="Seasoning"> </p>
+        </form>
+        
+        <div id = "result">
+            <h3>Количество калорий: </h3> 
+            <input type="text" name="calories" value = "0" id = "calories">
+            <h3>Цена:</h3>
+            <input type="text" name="price" value = "0" id = "price">
+            <p>Приятного аппетита!</p>
+            </div>
+    </div>
+    
+    <script src = "app.js"></script>
+</body>
+</html>
