@@ -1,0 +1,11 @@
+.Left {
+    background-color: #E7EAEF;
+    width: 30%;
+    border: 2px solid white;
+    padding: 15px 5px;
+}
+li {
+    list-style: none ; 
+    cursor: pointer;   
+    text-align: left;
+}
