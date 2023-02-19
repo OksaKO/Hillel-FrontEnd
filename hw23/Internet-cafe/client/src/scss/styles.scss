@@ -1,0 +1,36 @@
+@import "~bootstrap/scss/bootstrap";
+
+#menu {
+  border: 1px solid black;
+  height: 50px;
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+
+    li {
+      cursor: pointer;
+    }
+    li:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+#content {
+  border: 1px solid black;
+  min-height: 500px;
+}
+
+#modal {
+  display: flex;
+  justify-content: space-between;
+  div {
+    flex-basis: 400px;
+  }
+
+  #modal_price {
+    font-weight: bold;
+    font-size: 24px;
+  }
+}

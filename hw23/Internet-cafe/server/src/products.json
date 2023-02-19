@@ -1,0 +1,22 @@
+{
+  "burgers_2": [
+    {
+      "id": "chicken_burger",
+      "name": "Chicken burger",
+      "price": 100,
+      "available_toppings": [{"name": "potatoes", "price": 20} , {"name": "salad", "price": 15}, {"name":"cheese", "price": 20}]
+    },
+    {
+      "id": "pork_burger",
+      "name": "Pork burger",
+      "price": 150,
+      "available_toppings": [{"name": "potatoes", "price": 20} , {"name": "salad", "price": 15}, {"name":"tomatoes", "price": 20}]
+    },
+    {
+      "id": "beef_burger",
+      "name": "Beef burger",
+      "price": 140,
+      "available_toppings": [{"name": "potatoes", "price": 20} , {"name": "salad", "price": 15}, {"name":"cheese", "price": 20}]
+    }
+  ]
+}

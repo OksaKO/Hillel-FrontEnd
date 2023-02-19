@@ -1,0 +1,17 @@
+.PanelDiv {
+    width: 207px;
+    display: flex;
+    border: 1px solid gainsboro;
+    flex-wrap: wrap;
+    padding: auto;
+}
+.ResultDiv {
+    font-size: large;
+    text-align: right;
+    width: 207px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+}
