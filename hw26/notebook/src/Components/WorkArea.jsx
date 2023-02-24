@@ -1,16 +1,15 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import './WorkArea.css';
 export default function WorkArea(usersList) {
   const [users, setUsers] = useState(usersList.arr);
 
   const handleDelUser = (event) => {
-    const userN = event.target.getAttribute('userNum');
+    const userN = event.target.getAttribute('usernum');
     let tempArr = users.slice();
     tempArr.splice(userN,1)
     setUsers(tempArr);
   }
   const handleBtnSave = (event) => {
-   
     const objUser = {};
     const uName = document.querySelector('.uName');
     const userName = document.querySelector('.userName');
@@ -19,10 +18,11 @@ export default function WorkArea(usersList) {
       objUser.name = uName.value;
       objUser.username = userName.value
       objUser.phone = phone.value
-    let tempArr = users;
-    tempArr.push(objUser);
-    setUsers(tempArr);
-    console.log(users);
+      const usersList = document.querySelector('.usersList');
+    usersList.style.display = 'block';
+    const formAdd = document.querySelector('.formAdd');
+    formAdd.style.display = 'none';
+    setUsers([...users, objUser]);
   }
  // Создание таблицы 
   const result = users.map((elem,index) => {
@@ -30,10 +30,9 @@ export default function WorkArea(usersList) {
         <td>{elem.name}</td>
         <td>{elem.username}</td>
         <td>{elem.phone}</td>
-        <td><div className='delUser' onClick={handleDelUser} userNum ={index}>Delete</div></td>
+        <td><div className='delUser' onClick={handleDelUser} usernum ={index}>Delete</div></td>
       </tr>
   })
-
   return (
     <div className='pageUsers'> 
       <table className='usersList'>
@@ -47,7 +46,6 @@ export default function WorkArea(usersList) {
           <p>Телефон: <input type='text' className='phone' ></input></p>
           <button type='button' onClick={handleBtnSave} className='saveUser'>Сохранить</button>
         </div>
-    </div>
-    
+    </div>   
   )
 }

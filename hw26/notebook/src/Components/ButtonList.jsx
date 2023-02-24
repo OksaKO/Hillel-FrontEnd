@@ -7,8 +7,7 @@ export default function ButtonList() {
     const usersList = document.querySelector('.usersList');
     usersList.style.display = 'block';
     const formAdd = document.querySelector('.formAdd');
-    formAdd.style.display = 'none';
-    
+    formAdd.style.display = 'none';   
   }
   return (
     <button type='button' className='button' onClick={handleShowList}>Список</button>

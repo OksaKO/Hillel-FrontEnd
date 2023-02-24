@@ -6,12 +6,9 @@ import WorkArea from './Components/WorkArea';
 
 
 export default function App(users) {
-
     const [usersList, setUserList] = useState(users.arr);
-
   return (
-    <div className="App">
-     
+    <div className="App">    
       <div className='menu'>
         <ButtonList />
         <ButtonAdd />
