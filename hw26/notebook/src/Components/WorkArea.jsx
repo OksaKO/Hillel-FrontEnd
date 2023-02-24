@@ -24,6 +24,12 @@ export default function WorkArea(usersList) {
     formAdd.style.display = 'none';
     setUsers([...users, objUser]);
   }
+  const handleBtnCancel =() => {
+    const usersList = document.querySelector('.usersList');
+    usersList.style.display = 'block';
+    const formAdd = document.querySelector('.formAdd');
+    formAdd.style.display = 'none';   
+  }
  // Создание таблицы 
   const result = users.map((elem,index) => {
     return <tr key={index}>
@@ -45,6 +51,7 @@ export default function WorkArea(usersList) {
           <p>Ник: <input type='text' className='userName' ></input></p>
           <p>Телефон: <input type='text' className='phone' ></input></p>
           <button type='button' onClick={handleBtnSave} className='saveUser'>Сохранить</button>
+          <button type='button' onClick={handleBtnCancel} className='saveUser'>Отмена</button>
         </div>
     </div>   
   )

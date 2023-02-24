@@ -3,7 +3,6 @@ import './Button.css'
 
 export default function ButtonAdd() {
   const handleAddUser = () => {
-    console.log('Add');
     const usersList = document.querySelector('.usersList');
     usersList.style.display = 'none';
     const formAdd = document.querySelector('.formAdd');
