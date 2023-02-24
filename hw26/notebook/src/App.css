@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+.menu {
+  margin-left: 20px;
+  width: 496px;
+  border: 2px solid lightcyan;
+  display: flex;
+  
+  height: 50px;
+}
+
