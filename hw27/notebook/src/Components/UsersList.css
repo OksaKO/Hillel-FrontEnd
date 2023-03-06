@@ -1,0 +1,30 @@
+.usersList{
+    display: block;
+    
+    align-content: first baseline;
+    border: 2px;
+  
+}
+td{
+    text-align: left;
+    height: 40px;
+    padding: 10px;
+}
+tr{
+    background-color: #d1fff9;
+}
+tr:hover {
+    background-color: #d1e7ff;
+}
+
+.saveUser {
+    border: 2px;
+    background-color: #d1fff9;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    padding-top: 10px;
+    height: 30px;
+    margin: 10px;
+    
+}

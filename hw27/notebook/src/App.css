@@ -1,0 +1,17 @@
+.App {
+  margin: 50px;
+  width: fit-content;
+  text-align: center;
+  border: 2px solid #d1e7ff;
+  
+  
+}
+.menu {
+
+  
+  border: 2px solid lightcyan;
+  display: flex;
+  
+  height: 50px;
+}
+
