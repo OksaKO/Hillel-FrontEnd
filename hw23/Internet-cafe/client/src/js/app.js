@@ -34,7 +34,8 @@ const sendingOrder = function (){
  
   let orderObj = {
     userName : clientName,
-    product: currentProduct
+    product: currentProduct,
+    price: currentProduct.updatedPrice,
   };
   fetch(API_ORDER, {
     method: 'POST',
