@@ -1,0 +1,12 @@
+{
+  "name": "internet-cafe",
+  "version": "1.0.0",
+  "description": "1. cd client 2. npm i 3. cd ../server 4. npm i 5. npm start 6. Open the new Terminal (!) 7. cd client 8. npm start",
+  "main": "todo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

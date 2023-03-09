@@ -2,10 +2,11 @@ import '../scss/styles.scss';
 
 
 import { createCheckoutForm, createElement, createProductCard, updateProductPrice } from './helpers/domHelpers.js';
-import {API_CATEGORIES_LIST, API_PRODUCTS_BY_CATEGORY_ID} from './urls.js';
+import {API_CATEGORIES_LIST, API_PRODUCTS_BY_CATEGORY_ID, API_ORDER} from './urls.js';
 
 let productsArr = [];
 let currentProduct = {};
+let prevTopping = 0;
 
 const changeSizeHandler = function(event) {
   const size = event.target.value; //
@@ -21,16 +22,37 @@ const changeSizeHandler = function(event) {
 const changeToppingHandler = function(event) {
   const toppingName = event.target.value;
   const topping = currentProduct.available_toppings.find(topping => topping.name === toppingName);
-
-  currentProduct.updatedPrice = currentProduct.price + topping.price;
+  
+  currentProduct.updatedPrice = currentProduct.updatedPrice + topping.price - prevTopping;
+  prevTopping = topping.price;
   updateProductPrice(currentProduct.updatedPrice);
 }
+
+const sendingOrder = function (){
+  
+  const clientName = document.querySelector( '#client_name').value;
+ 
+  let orderObj = {
+    userName : clientName,
+    product: currentProduct
+  };
+  fetch(API_ORDER, {
+    method: 'POST',
+    body: JSON.stringify(orderObj),
+    headers: {
+      "Content-Type": "application/json"
+    },
+  }).then(response => console.log(response));
+} 
+
+
 
 const clickBuyHandler = function(event) {
   const productId = event.target.getAttribute('data-product-id'); // ok
   currentProduct = productsArr.find(product => product.id === productId);
   currentProduct.updatedPrice = currentProduct.price;
-  createCheckoutForm(currentProduct, changeSizeHandler, changeToppingHandler);
+  prevTopping = 0;
+  createCheckoutForm(currentProduct, changeSizeHandler, changeToppingHandler, sendingOrder);
 }
 
 const menuItemClickHandler = function(event) {
@@ -48,6 +70,7 @@ const menuItemClickHandler = function(event) {
 
     })
 }
+
 
 
 // onload:

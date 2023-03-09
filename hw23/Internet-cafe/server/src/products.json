@@ -18,5 +18,40 @@
       "price": 140,
       "available_toppings": [{"name": "potatoes", "price": 20} , {"name": "salad", "price": 15}, {"name":"cheese", "price": 20}]
     }
+  ],
+  "shaurma_1": [
+    {
+      "id": "chicken_shaurma",
+      "name": "Chicken shaurma",
+      "price": 150,
+      "available_toppings": [{"name": "potatoes", "price": 20} , {"name": "salad", "price": 15}, {"name":"cheese", "price": 20}]
+    },
+    {
+      "id": "beef_shaurma",
+      "name": "Beef shaurma",
+      "price": 130,
+      "available_toppings": [{"name": "potatoes", "price": 20} , {"name": "salad", "price": 15}, {"name":"cheese", "price": 20}]
+    }
+  ],
+  "drinks_3":[
+    {
+      "id": "cappuccino",
+      "name": "Сappuccino",
+      "price": 35,
+      "available_toppings": [{"name": "sugar", "price": 5} , {"name": "syrup", "price": 10}, {"name":"chocolate", "price": 15}]     
+    },
+    {
+      "id": "espresso",
+      "name": "Espresso",
+      "price": 35,
+      "available_toppings": [{"name": "sugar", "price": 5} , {"name": "syrup", "price": 10}, {"name":"chocolate", "price": 15}]      
+    },
+    {
+      "id": "latte",
+      "name": "Latte",
+      "price": 35 ,
+      "available_toppings": [{"name": "sugar", "price": 5} , {"name": "syrup", "price": 10}, {"name":"chocolate", "price": 15}]     
+    }
   ]
+
 }

@@ -26,13 +26,6 @@ export function createElement(tagName, content, attributes, eventHandlers, paren
   return element;
 }
 
-/**
- * attributes
- * { id: '', className: '', 'data-index': '' }
- * 
- * eventHandlers
- * { click: function, mouseover: function }
- */
 
 
 export function createProductCard(product, buyClickHandler) {
@@ -51,18 +44,13 @@ export function createProductCard(product, buyClickHandler) {
     parentElem
   );
 
-  /*
-  <div class="product_card">
-        <h3>Product name</h3>
-        <p>UAH 150</p>
-        <input type="button" data-product-id= value="Buy" />
-      </div>
-  */
+
 }
 
-export function createCheckoutForm(product, changeSizeHandler, changeToppingHandler) {
+export function createCheckoutForm(product, changeSizeHandler, changeToppingHandler, sendingOrder) {
   document.querySelector('#modal_details').innerHTML = '';
   document.querySelector('#modal_price').innerHTML = '';
+
   updateProductPrice(product.price);
   
 
@@ -89,22 +77,26 @@ export function createCheckoutForm(product, changeSizeHandler, changeToppingHand
     sizeP
   );
   createElement('span', 'Big', null, null, sizeP);
-
+  
   const toppingsP = createElement('p', '', null, null, '#modal_details');
   createElement('h4', 'Toppings:', null, null, toppingsP);
 
-  for(let topping of product.available_toppings) {
-    const p = createElement('p', '', null, null, toppingsP);
-    createElement('input', '', { type: 'radio', name: 'toppings', value: topping.name }, {change: changeToppingHandler}, p);
-    createElement('span', `${topping.name} UAH ${topping.price}`, null, null, p)
-  }
-
+      for(let topping of product.available_toppings) {
+        const p = createElement('p', '', null, null, toppingsP);
+        createElement('input', '', { type: 'radio', name: 'toppings', value: topping.name }, {change: changeToppingHandler}, p);
+        createElement('span', `${topping.name} UAH ${topping.price}`, null, null, p)
+      }
+      
+  
+  
+  
   const buttonsP = createElement('p', '', null, null, '#modal_details');
-  createElement('input', '', {type: 'text', name: 'client_name', placeholder: 'Enter your name'}, null, buttonsP);
-  createElement('input', '', {type: 'button', value: 'Order'}, null, buttonsP);
+  createElement('input', '', {type: 'text', name: 'client_name', id : 'client_name',   placeholder: 'Enter your name'}, null, buttonsP);
+  createElement('input', '', {type: 'button', value: 'Order'}, {click: sendingOrder}, buttonsP);
 }
 
 export function updateProductPrice(newPrice) {
   document.querySelector('#modal_price').innerHTML = '';
   createElement('span', `UAH ${newPrice}`, null, null, '#modal_price');
 }
+

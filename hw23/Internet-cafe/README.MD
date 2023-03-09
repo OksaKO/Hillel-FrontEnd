@@ -6,3 +6,4 @@
 6. Open the new Terminal (!)
 7. cd client
 8. npm start
+9. localhost:3000
